@@ -5,6 +5,7 @@ import com.knifeandsword.KnifeAndSwordWarehouse.repositories.IronRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class IronService {
@@ -15,7 +16,4 @@ public class IronService {
         this.ironRepository = ironRepository;
     }
 
-    public List<Iron> listIron() {
-        return ironRepository.findAll();
-    }
 }
