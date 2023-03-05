@@ -9,18 +9,25 @@
 
 <header th:insert="blocks/header :: header"></header>
 
-<h1>Iron List</h1>
-
-<ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-    <li><a href="/iron/add-iron" class="nav-link px-2 link-secondary">Add iron</a></li>
-</ul>
+<h1>Iron Details</h1>
 
 <div class="container mt-5">
-    <h2>All iron</h2>
     <div th:each="el : ${iron}" class="alert alert-info mt-2">
-        <h3 th:text="${el.name}"/>
+        <h1 th:text="${el.name}"/>
+        <p th:text="${el.width}"/>
+        <p th:text="${el.height}"/>
+        <p th:text="${el.length}"/>
+        <p th:text="${el.weight}"/>
         <p th:text="${el.amount}"/>
-        <a th:href="'/iron/iron/' + ${el.id}" class="btn btn-warning">Detail</a>
+        <p th:text="${el.price}"/>
+
+        <a th:href="'/iron/' + ${el.id} + '/edit'" class="btn btn-warning">Edit</a><br><br>
+
+        <form th:action="'/iron/' + ${el.id} + '/remove'" method="post">
+            <button class="btn btn-warning" type="submit">Remove iron</button>
+        </form>
+    </form>
+
     </div>
 </div>
 

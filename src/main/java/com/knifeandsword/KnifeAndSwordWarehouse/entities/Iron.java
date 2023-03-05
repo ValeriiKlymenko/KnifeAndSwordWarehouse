@@ -26,14 +26,16 @@ public class Iron {
     private int height;//висота мм
     private int length;//довжина мм
     private int weight;//вага г
+    private int amount;
     private BigDecimal price;
 
-    public Iron(String name, int width, int height, int length, int weight, BigDecimal price) {
+    public Iron(String name, int width, int height, int length, int weight, int amount, BigDecimal price) {
         this.name = name;
         this.width = width;
         this.height = height;
         this.length = length;
         this.weight = weight;
+        this.amount = amount;
         this.price = price;
     }
 }

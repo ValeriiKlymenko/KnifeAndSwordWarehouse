@@ -15,24 +15,15 @@ import java.util.Optional;
 @Controller
 @RequestMapping("iron")
 public class IronController {
-//    public final IronService ironService;
     public final IronRepository ironRepository;
-
     public IronController(IronRepository ironRepository) {
         this.ironRepository = ironRepository;
     }
-//    public IronController(IronService ironService) {
-//        this.ironService = ironService;
-//    }
 
-//    @GetMapping("/")
-//    public String ironList() {
-//        return "iron";
-//    }
     @GetMapping("/iron")
     public String ironList(Model model){
-        Iterable<Iron> books = ironRepository.findAll();
-        model.addAttribute("books", books);
+        Iterable<Iron> iron = ironRepository.findAll();
+        model.addAttribute("iron", iron);
         return "iron";
     }
 
@@ -47,11 +38,12 @@ public class IronController {
                               @RequestParam int height,
                               @RequestParam int length,
                               @RequestParam int weight,
+                              @RequestParam int amount,
                               @RequestParam BigDecimal price,
                               Model model){
-        Iron iron = new Iron(name, width, height, length, weight, price);// потрібно створити конструктор в entity
+        Iron iron = new Iron(name, width, height, length, weight, amount, price);// потрібно створити конструктор в entity
         ironRepository.save(iron);
-        return "redirect:/";
+        return "redirect:/iron/";
     }
     @GetMapping("/iron/{id}")
     public String ironDetails(@PathVariable(value = "id") long id, Model model){
