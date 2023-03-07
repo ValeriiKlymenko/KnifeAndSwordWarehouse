@@ -1,9 +1,6 @@
 package com.knifeandsword.KnifeAndSwordWarehouse.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -20,4 +17,11 @@ public class Type {
     private Long id;
 
     private String name;
+
+    @OneToOne(mappedBy = "type", cascade = CascadeType.ALL)
+    private Material material;
+
+    public Type(String name) {
+        this.name = name;
+    }
 }

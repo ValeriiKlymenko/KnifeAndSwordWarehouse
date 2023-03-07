@@ -12,18 +12,19 @@
     <header th:insert="blocks/header :: header"></header>
 
     <main>
-        <h1>Add iron</h1>
+        <h1>Add material</h1>
 
         <div class="container mt-5 mb-5">
-            <form action="/iron/add-iron" method="post">
-                <input type="text" name="name" placeholder="name iron" class="form-control"><br>
+            <form action="/material/add-material" method="post">
+                <input type="text" name="name" placeholder="name material" class="form-control"><br>
                 <input type="number" name="width" placeholder="width(mm)" class="form-control"><br>
                 <input type="number" name="height" placeholder="height(mm)" class="form-control"><br>
                 <input type="number" name="length" placeholder="length(mm)" class="form-control"><br>
                 <input type="number" name="weight" placeholder="weight(g)" class="form-control"><br>
                 <input type="number" name="amount" placeholder="amount" class="form-control"><br>
                 <input type="number" name="price" placeholder="price" class="form-control"><br>
-                <button type="submit" class="btn btn-success">Add iron</button>
+                <input type="checkbox" name="type" placeholder="type" class="form-control"><br>
+                <button type="submit" class="btn btn-success">Add material</button>
             </form>
         </div>
     </main>

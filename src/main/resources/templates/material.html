@@ -9,18 +9,18 @@
 <div class="col-lg-8 mx-auto p-4 py-md-5">
 <header th:insert="blocks/header :: header"></header>
 
-<h1>Iron List</h1>
+<h1>Material List</h1>
 
 <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-    <li><a href="/iron/add-iron" class="nav-link px-2 link-secondary">Add iron</a></li>
+    <li><a href="/material/add-material" class="nav-link px-2 link-secondary">Add material</a></li>
 </ul>
 
 <div class="container mt-5">
-    <h2>All iron</h2>
-    <div th:each="el : ${iron}" class="alert alert-info mt-2">
+    <h2>All material</h2>
+    <div th:each="el : ${material}" class="alert alert-info mt-2">
         <h3 th:text="${el.name}"/>
-        <p th:text="${el.amount}"/>
-        <a th:href="'/iron/iron/' + ${el.id}" class="btn btn-warning">Detail</a>
+        <p th:text="${el.price}"/>
+        <a th:href="'/material/material/' + ${el.id}" class="btn btn-warning">Detail</a>
     </div>
 </div>
 

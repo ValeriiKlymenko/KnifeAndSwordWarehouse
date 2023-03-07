@@ -9,10 +9,10 @@
 <div class="col-lg-8 mx-auto p-4 py-md-5">
 <header th:insert="blocks/header :: header"></header>
 
-<h1>Iron Details</h1>
+<h1>Material Details</h1>
 
 <div class="container mt-5">
-    <div th:each="el : ${iron}" class="alert alert-info mt-2">
+    <div th:each="el : ${material}" class="alert alert-info mt-2">
         <h1 th:text="${el.name}"/>
         <p th:text="${el.width}"/>
         <p th:text="${el.height}"/>
@@ -20,11 +20,12 @@
         <p th:text="${el.weight}"/>
         <p th:text="${el.amount}"/>
         <p th:text="${el.price}"/>
+        <p th:text="${el.type}"/>
 
-        <a th:href="'/iron/iron/' + ${el.id} + '/edit'" class="btn btn-warning">Edit</a><br><br>
+        <a th:href="'/material/material/' + ${el.id} + '/edit'" class="btn btn-warning">Edit</a><br><br>
 
-        <form th:action="'/iron/iron/' + ${el.id} + '/remove'" method="post">
-            <button class="btn btn-warning" type="submit">Remove iron</button>
+        <form th:action="'/material/material/' + ${el.id} + '/remove'" method="post">
+            <button class="btn btn-warning" type="submit">Remove material</button>
         </form>
     </form>
 

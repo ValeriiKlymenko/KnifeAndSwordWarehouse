@@ -10,16 +10,17 @@
 <header th:insert="blocks/header :: header"></header>
 
 <div class="container mt-5 mb-5">
-    <h1>Edit iron</h1>
-    <div th:each="el : ${iron}">
+    <h1>Edit material</h1>
+    <div th:each="el : ${material}">
         <form method="post">
-            <input type="text" th:value="${el.name}" name="name" placeholder="write name iron" class="form-control"><br>
+            <input type="text" th:value="${el.name}" name="name" placeholder="write name material" class="form-control"><br>
             <input type="text" th:value="${el.width}" name="width" placeholder="write width" class="form-control"><br>
             <input type="text" th:value="${el.height}" name="height" placeholder="write height" class="form-control"><br>
             <input type="text" th:value="${el.length}" name="length" placeholder="write length" class="form-control"><br>
             <input type="text" th:value="${el.weight}" name="weight" placeholder="write weight" class="form-control"><br>
             <input type="text" th:value="${el.amount}" name="amount" placeholder="write amount" class="form-control"><br>
             <input type="text" th:value="${el.price}" name="price" placeholder="write price" class="form-control"><br>
+            <input type="text" th:value="${el.type}" name="type" placeholder="write type" class="form-control"><br>
             <button type="submit" class="btn btn-success">Edit</button>
         </form>
     </div>
