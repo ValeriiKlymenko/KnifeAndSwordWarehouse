@@ -26,8 +26,7 @@ public class Material {
     private int amount;
     private BigDecimal price;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "type_id")
+    @ManyToOne
     private Type type;
 
     public Material(String name, int width, int length, int height, int weight, int amount, BigDecimal price, Type type) {

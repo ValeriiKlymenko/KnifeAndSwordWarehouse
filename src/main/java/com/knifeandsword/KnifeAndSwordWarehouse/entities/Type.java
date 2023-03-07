@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Entity
 @Table(name = "type")
 @Data
@@ -18,8 +20,9 @@ public class Type {
 
     private String name;
 
-    @OneToOne(mappedBy = "type", cascade = CascadeType.ALL)
-    private Material material;
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "type_id")
+    private List<Type> type;
 
     public Type(String name) {
         this.name = name;

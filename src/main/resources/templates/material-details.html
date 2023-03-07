@@ -13,14 +13,14 @@
 
 <div class="container mt-5">
     <div th:each="el : ${material}" class="alert alert-info mt-2">
-        <h1 th:text="${el.name}"/>
+        <h2 th:text="${el.name}"/>
         <p th:text="${el.width}"/>
         <p th:text="${el.height}"/>
         <p th:text="${el.length}"/>
         <p th:text="${el.weight}"/>
         <p th:text="${el.amount}"/>
         <p th:text="${el.price}"/>
-        <p th:text="${el.type}"/>
+        <p th:text="${el.type.name}"/>
 
         <a th:href="'/material/material/' + ${el.id} + '/edit'" class="btn btn-warning">Edit</a><br><br>
 
