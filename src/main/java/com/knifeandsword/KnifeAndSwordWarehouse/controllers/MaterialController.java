@@ -28,6 +28,8 @@ public class MaterialController {
 
     @GetMapping("/add-material")
     public String materialAdd(Model model){
+        Iterable<Material> material = materialRepository.findAll();
+        model.addAttribute("material", material);
         return "add-material";
     }
 

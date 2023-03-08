@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <head>
     <title>Knife And Sword</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -14,7 +14,7 @@
     <main>
         <h1>Add material</h1>
 
-        <div class="container mt-5 mb-5">
+        <div class="container mt-5 mb-5" th:each="el : ${material}">
             <form action="/material/add-material" method="post">
                 <input type="text" name="name" placeholder="name material" class="form-control"><br>
                 <input type="number" name="width" placeholder="width(mm)" class="form-control"><br>
@@ -23,7 +23,16 @@
                 <input type="number" name="weight" placeholder="weight(g)" class="form-control"><br>
                 <input type="number" name="amount" placeholder="amount" class="form-control"><br>
                 <input type="number" name="price" placeholder="price" class="form-control"><br>
-                <input type="text" name="type" placeholder="type" class="form-control"><br>
+
+<!--                <input type="text" name="type" placeholder="type" class="form-control"><br>-->
+
+                <select name="type" class="form-control">
+                    <option value="IRON"><p th:text="${el.type.IRON}"/></option>
+                    <option value="WOOD"><p th:text="${el.type.WOOD}"/></option>
+                    <option value="LEATHER"><p th:text="${el.type.LEATHER}"/></option>
+                    <option value="ANOTHER"><p th:text="${el.type.ANOTHER}"/></option>
+                </select></br>
+
                 <button type="submit" class="btn btn-success">Add material</button>
             </form>
         </div>

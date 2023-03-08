@@ -20,7 +20,16 @@
             <input type="text" th:value="${el.weight}" name="weight" placeholder="write weight" class="form-control"><br>
             <input type="text" th:value="${el.amount}" name="amount" placeholder="write amount" class="form-control"><br>
             <input type="text" th:value="${el.price}" name="price" placeholder="write price" class="form-control"><br>
-            <input type="text" th:value="${el.type}" name="type" placeholder="write type" class="form-control"><br>
+
+<!--            <input type="text" th:value="${el.type}" name="type" placeholder="write type" class="form-control"><br>-->
+
+            <select name="type" class="form-control">
+                <option value="IRON"><p th:text="${el.type.IRON}"/></option>
+                <option value="WOOD"><p th:text="${el.type.WOOD}"/></option>
+                <option value="LEATHER"><p th:text="${el.type.LEATHER}"/></option>
+                <option value="ANOTHER"><p th:text="${el.type.ANOTHER}"/></option>
+            </select></br>
+
             <button type="submit" class="btn btn-success">Edit</button>
         </form>
     </div>
