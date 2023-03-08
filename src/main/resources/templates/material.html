@@ -19,7 +19,7 @@
     <h2>All material</h2>
     <div th:each="el : ${material}" class="alert alert-info mt-2">
         <h3 th:text="${el.name}"/>
-        <p th:text="${el.type.name}"/>
+        <p th:text="${el.type}"/>
         <a th:href="'/material/material/' + ${el.id}" class="btn btn-warning">Detail</a>
     </div>
 </div>

@@ -1,7 +1,7 @@
 package com.knifeandsword.KnifeAndSwordWarehouse.controllers;
 
 import com.knifeandsword.KnifeAndSwordWarehouse.entities.Material;
-import com.knifeandsword.KnifeAndSwordWarehouse.entities.Type;
+import com.knifeandsword.KnifeAndSwordWarehouse.enums.Type;
 import com.knifeandsword.KnifeAndSwordWarehouse.repositories.MaterialRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

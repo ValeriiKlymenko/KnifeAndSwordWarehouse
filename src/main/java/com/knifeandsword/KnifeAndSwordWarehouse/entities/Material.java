@@ -1,5 +1,6 @@
 package com.knifeandsword.KnifeAndSwordWarehouse.entities;
 
+import com.knifeandsword.KnifeAndSwordWarehouse.enums.Type;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -25,8 +26,6 @@ public class Material {
     private int weight;//вага г
     private int amount;
     private BigDecimal price;
-
-    @ManyToOne
     private Type type;
 
     public Material(String name, int width, int length, int height, int weight, int amount, BigDecimal price, Type type) {
